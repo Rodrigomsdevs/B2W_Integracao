@@ -19,7 +19,7 @@ class b2w {
         this.nbm = "";
         this.categories = [];
         this.images = [""];
-        this.setEspecificacoes = [{ "key": "", "value": "" }];
+        //this.especificacoes = [{ "key": "", "value": "" }];
     }
 
     setName(nome) {

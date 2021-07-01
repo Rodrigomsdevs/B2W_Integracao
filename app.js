@@ -6,8 +6,8 @@ var teste = new b2w();
 
 var variacoes = new variacao();
 
-teste.setName('Teste Alteracao do Produto');
-teste.setSku("1625164865889");
+teste.setName('Produto sem variação');
+teste.setSku(Date.now());
 teste.setDescricao('Descricao top');
 teste.setPreco('46');
 teste.setPrecoPromocional('30');
@@ -35,7 +35,7 @@ teste.setImages([
     "https://aramismenswear.vtexassets.com/arquivos/ids/452188-500-auto?width=500&height=auto&aspect=true"
 ]);
 
-teste.setEspec([
+/*teste.setEspec([
     {
         "key": "Tamanho",
         "value": "P"
@@ -44,11 +44,11 @@ teste.setEspec([
         "key": "Cor",
         "value": "Branco"
     }
-]);
+]);*/
 
 //setar produto com variacao
 
-variacoes.addVariacao("SKUV", 15, "", [
+/*variacoes.addVariacao("SKUV", 15, "", [
     "http://d26lpennugtm8s.cloudfront.net/stores/154/284/products/camiseta-lisa-verde-bandeira-algodo-p-ao-gg-pronta-entrega-355901-mlb20431777049_092015-o-07fadec89e5ed54705c1b9ab5411dec8-1024-1024.jpg"
 ], [
     {
@@ -75,16 +75,16 @@ variacoes.addVariacao("SKUP", 10, "", [
 ]);
 
 teste.setProdutoComVariacao(true);
-teste.setVariavoes(variacoes.retornaVariacoes());
+teste.setVariavoes(variacoes.retornaVariacoes());*/
 
 //deleta
-teste.enviarRequisicao('DELETE');
+//teste.enviarRequisicao('DELETE');
 
 //altera
 //teste.enviarRequisicao('PUT');
 
 
 //cria
-//teste.enviarRequisicao('POST');
+teste.enviarRequisicao('POST');
 
 
