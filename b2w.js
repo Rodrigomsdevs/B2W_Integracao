@@ -136,16 +136,25 @@ class b2w {
         };
     }
 
-    enviarProduto() {
+    enviarRequisicao(methodRe) {
+
+        var urlApi;
+
+        if (methodRe == 'POST') {
+            urlApi = `https://api.skyhub.com.br/products`;
+        } else {
+            urlApi = `https://api.skyhub.com.br/products/${this.sku}`;
+        }
+
         request({
-            url: "https://api.skyhub.com.br/products",
-            method: "POST",
+            url: urlApi,
+            method: methodRe,
             headers: this.preparaHeaders(),
             json: true,
             body: this.preparaArrayProduto()
         }, function (error, response, body) {
             if (response.statusCode == 201 || response.statusCode == 200 || response.statusCode == 204) {
-                console.log('Produto adicionado com sucesso!');
+                console.log('Executado com sucesso!');
             } else {
                 console.log('Error => ' + JSON.stringify(body));
             }

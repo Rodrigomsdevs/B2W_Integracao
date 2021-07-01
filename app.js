@@ -2,10 +2,12 @@ const b2w = require('./b2w');
 const variacao = require('./b2w_variacao');
 
 var teste = new b2w();
+
+
 var variacoes = new variacao();
 
-teste.setName('Teste Integracao ' + Date.now());
-teste.setSku(Date.now());
+teste.setName('Teste Alteracao do Produto');
+teste.setSku("1625164865889");
 teste.setDescricao('Descricao top');
 teste.setPreco('46');
 teste.setPrecoPromocional('30');
@@ -75,4 +77,14 @@ variacoes.addVariacao("SKUP", 10, "", [
 teste.setProdutoComVariacao(true);
 teste.setVariavoes(variacoes.retornaVariacoes());
 
-teste.enviarProduto();
+//deleta
+teste.enviarRequisicao('DELETE');
+
+//altera
+//teste.enviarRequisicao('PUT');
+
+
+//cria
+//teste.enviarRequisicao('POST');
+
+
