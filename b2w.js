@@ -3,23 +3,7 @@ const request = require('request');
 class b2w {
 
     constructor() {
-        this.sku = "";
-        this.nome = "";
-        this.descricao = "";
-        this.qty = 0;
-        this.precoTotal = 0;
-        this.precoPromo = 0;
-        this.custo = 0;
-        this.weight = 0;
-        this.height = 0;
-        this.width = 0;
-        this.length = 1;
-        this.brand = "";
-        this.ean = "";
-        this.nbm = "";
-        this.categories = [];
-        this.images = [""];
-        //this.especificacoes = [{ "key": "", "value": "" }];
+
     }
 
     setName(nome) {
