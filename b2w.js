@@ -138,13 +138,7 @@ class b2w {
 
     enviarRequisicao(methodRe) {
 
-        var urlApi;
-
-        if (methodRe == 'POST') {
-            urlApi = `https://api.skyhub.com.br/products`;
-        } else {
-            urlApi = `https://api.skyhub.com.br/products/${this.sku}`;
-        }
+        var urlApi = (methodRe == 'POST' ? `https://api.skyhub.com.br/products` : `https://api.skyhub.com.br/products/${this.sku}`);
 
         request({
             url: urlApi,
