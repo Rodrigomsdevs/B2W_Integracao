@@ -1,10 +1,18 @@
 const b2w = require('./b2w');
 const variacao = require('./b2w_variacao');
+const b2w_produto = require('./b2w_produtos');
+const b2w_pedidos = require('./b2w_pedidos');
 
 var teste = new b2w();
-
-
+var produto = new b2w_produto();
 var variacoes = new variacao();
+var pedidos = new b2w_pedidos();
+
+pedidos.criarPedidoTeste();
+return;
+
+//produto.setProduto('1625169472052');
+//produto.getProdutos();
 
 teste.setName('Produto sem variação');
 teste.setSku(Date.now());
@@ -35,7 +43,7 @@ teste.setImages([
     "https://aramismenswear.vtexassets.com/arquivos/ids/452188-500-auto?width=500&height=auto&aspect=true"
 ]);
 
-/*teste.setEspec([
+teste.setEspec([
     {
         "key": "Tamanho",
         "value": "P"
@@ -44,11 +52,11 @@ teste.setImages([
         "key": "Cor",
         "value": "Branco"
     }
-]);*/
+]);
 
 //setar produto com variacao
 
-/*variacoes.addVariacao("SKUV", 15, "", [
+variacoes.addVariacao("SKUV", 15, "", [
     "http://d26lpennugtm8s.cloudfront.net/stores/154/284/products/camiseta-lisa-verde-bandeira-algodo-p-ao-gg-pronta-entrega-355901-mlb20431777049_092015-o-07fadec89e5ed54705c1b9ab5411dec8-1024-1024.jpg"
 ], [
     {
@@ -75,7 +83,7 @@ variacoes.addVariacao("SKUP", 10, "", [
 ]);
 
 teste.setProdutoComVariacao(true);
-teste.setVariavoes(variacoes.retornaVariacoes());*/
+teste.setVariavoes(variacoes.retornaVariacoes());
 
 //deleta
 //teste.enviarRequisicao('DELETE');

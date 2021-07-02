@@ -1,4 +1,5 @@
 const request = require('request');
+const config = require('./b2w_config');
 
 class b2w {
 
@@ -109,17 +110,6 @@ class b2w {
         };
     }
 
-
-    preparaHeaders() {
-        return {
-            "X-User-Email": "wesley.r.souza@live.com",
-            "x-Api-Key": "HAFrjAeXVC38syimGHHq",
-            "x-accountmanager-key": "xampsom",
-            "Accept": "application/json;charset=UTF-8",
-            "Content-Type": "application/json",
-        };
-    }
-
     enviarRequisicao(methodRe) {
 
         var urlApi = (methodRe == 'POST' ? `https://api.skyhub.com.br/products` : `https://api.skyhub.com.br/products/${this.sku}`);
@@ -127,7 +117,7 @@ class b2w {
         request({
             url: urlApi,
             method: methodRe,
-            headers: this.preparaHeaders(),
+            headers: config.preparaHeaders(),
             json: true,
             body: this.preparaArrayProduto()
         }, function (error, response, body) {
